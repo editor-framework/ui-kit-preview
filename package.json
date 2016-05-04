@@ -1,0 +1,26 @@
+{
+  "name": "ui-widgets",
+  "version": "1.0.0",
+  "description": "Editor Framework UI Widgets",
+  "author": "jwu",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.developer.title/UI Preview/ui-widgets": {
+      "message": "ui-widgets:open"
+    }
+  },
+  "panel": {
+    "main": "panel/panel.js",
+    "type": "dockable",
+    "title": "UI Widgets",
+    "width": 800,
+    "height": 600,
+    "messages": [],
+    "profiles": {
+      "local": {
+        "scrollTop": 0,
+        "select": "ui-button"
+      }
+    }
+  }
+}
