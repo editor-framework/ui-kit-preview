@@ -21,6 +21,11 @@ Editor.Panel.extend({
       overflow-y: auto;
       overflow-x: hidden;
     }
+
+    div.group {
+      border-bottom: 1px solid #333;
+      padding: 10px;
+    }
   `,
 
   template: `
