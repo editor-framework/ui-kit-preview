@@ -1,18 +1,18 @@
 {
-  "name": "ui-widgets",
+  "name": "ui-kit-preview",
   "version": "1.0.0",
   "description": "Editor Framework UI Widgets",
   "author": "jwu",
   "main": "main.js",
   "main-menu": {
-    "i18n:MAIN_MENU.developer.title/UI Preview/ui-widgets": {
-      "message": "ui-widgets:open"
+    "i18n:MAIN_MENU.developer.title/UI Preview/ui-kit-preview": {
+      "message": "ui-kit-preview:open"
     }
   },
   "panel": {
     "main": "panel/panel.js",
     "type": "dockable",
-    "title": "UI Widgets",
+    "title": "ui-kit preview",
     "width": 800,
     "height": 600,
     "messages": [],

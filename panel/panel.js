@@ -22,9 +22,17 @@ Editor.Panel.extend({
       overflow-x: hidden;
     }
 
-    div.group {
+    div.section {
       border-bottom: 1px solid #333;
-      padding: 10px;
+      padding-bottom: 10px;
+    }
+
+    div.group {
+      margin-bottom: 5px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   `,
 
@@ -46,7 +54,7 @@ Editor.Panel.extend({
       view: this.shadowRoot.querySelector('#view'),
     };
 
-    Editor.import('packages://ui-widgets/panel/button-preview.js').then(
+    Editor.import('packages://ui-kit-preview/panel/button-preview.js').then(
       initFn => {
         initFn(this.$.view);
       }

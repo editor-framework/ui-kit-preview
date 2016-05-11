@@ -1,4 +1,80 @@
-<div class="group">
-  <ui-button>Tiny</ui-button>
-  <ui-button>Normal</ui-button>
+<div class="section">
+  <h3>A standard button</h3>
+  <div class="group g-01">
+    <ui-button>Click</ui-button>
+    <span style="display: none;">clicked</span>
+  </div>
+
+  <div class="group g-02">
+    <ui-button disabled>Click</ui-button>
+    <span style="display: none;">clicked</span>
+  </div>
+</div>
+
+<div class="section" style="display: none;">
+  <h3>Icon (TODO)</h3>
+  <div class="group">
+    <ui-button class="animated">
+      <i class="icon cloud"></i>
+    </ui-button>
+  </div>
+</div>
+
+<div class="section" style="display: none;">
+  <h3>Animated (TODO)</h3>
+  <div class="group">
+    <ui-button class="animated">
+      <div class="visible">Build</div>
+      <div class="hidden">Go</div>
+    </ui-button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Size</h3>
+  <div class="group">
+    <ui-button class="mini">Mini</ui-button>
+    <ui-button class="tiny">Tiny</ui-button>
+    <ui-button class="small">Small</ui-button>
+    <ui-button class="medium">Medium</ui-button>
+    <ui-button class="large">Large</ui-button>
+    <ui-button class="big">Big</ui-button>
+    <ui-button class="huge">Huge</ui-button>
+    <ui-button class="massive">Massive</ui-button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>Colored</h3>
+  <div class="group">
+    <ui-button style="width: 100px;">Default</ui-button>
+    <ui-button style="width: 100px;" class="red">Red</ui-button>
+    <ui-button style="width: 100px;" class="green">Green</ui-button>
+    <ui-button style="width: 100px;" class="blue">Blue</ui-button>
+  </div>
+</div>
+
+<div class="section">
+  <h3>State</h3>
+  <div style="position: relative;">
+    <div class="group">
+      <ui-button style="width: 100px;" pressed>Pressed</ui-button>
+      <ui-button style="width: 100px;" class="red" pressed>Pressed</ui-button>
+      <ui-button style="width: 100px;" class="green" pressed>Pressed</ui-button>
+      <ui-button style="width: 100px;" class="blue" pressed>Pressed</ui-button>
+    </div>
+    <div class="group">
+      <ui-button style="width: 100px;" focused>Focused</ui-button>
+      <ui-button style="width: 100px;" class="red" focused>Focused</ui-button>
+      <ui-button style="width: 100px;" class="green" focused>Focused</ui-button>
+      <ui-button style="width: 100px;" class="blue" focused>Focused</ui-button>
+    </div>
+    <div class="group">
+      <ui-button style="width: 100px;" disabled>Disabled</ui-button>
+      <ui-button style="width: 100px;" class="red" disabled>Disabled</ui-button>
+      <ui-button style="width: 100px;" class="green" disabled>Disabled</ui-button>
+      <ui-button style="width: 100px;" class="blue" disabled>Disabled</ui-button>
+    </div>
+    <div class="fit"></div>
+  </div>
 </div>
