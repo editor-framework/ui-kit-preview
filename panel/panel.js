@@ -23,8 +23,12 @@ Editor.Panel.extend({
     }
 
     div.section {
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #666;
       padding-bottom: 10px;
+    }
+
+    div.section:last-child {
+      border-bottom: 0px;
     }
 
     div.group {
@@ -39,7 +43,9 @@ Editor.Panel.extend({
   template: `
     <div class="toolbar">
       <select id="select">
-        <option value="ui-button">ui-button</option>
+        <option value="button">ui-button</option>
+        <option value="checkbox">ui-checkbox</option>
+        <option value="input">ui-input</option>
       </select>
     </div>
     <div id="view"></div>
@@ -54,10 +60,33 @@ Editor.Panel.extend({
       view: this.shadowRoot.querySelector('#view'),
     };
 
-    Editor.import('packages://ui-kit-preview/panel/button-preview.js').then(
-      initFn => {
+    this.$.select.addEventListener('change', event => {
+      let value = event.target.value;
+
+      this.profiles.local.scrollTop = 0;
+      this.profiles.local.select = value;
+      this.profiles.local.save();
+
+      this.showPreview(value);
+    });
+
+    this.$.select.value = this.profiles.local.select;
+    this.showPreview(this.profiles.local.select);
+  },
+
+  close () {
+    this.profiles.local.scrollTop = this.$.view.scrollTop;
+    this.profiles.local.save();
+  },
+
+  showPreview (name) {
+    Editor
+      .import(`packages://ui-kit-preview/panel/${name}-preview.js`)
+      .then(initFn => {
         initFn(this.$.view);
-      }
-    );
+        setTimeout(() => {
+          this.$.view.scrollTop = this.profiles.local.scrollTop;
+        }, 10);
+      });
   },
 });

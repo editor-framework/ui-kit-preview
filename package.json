@@ -19,7 +19,7 @@
     "profiles": {
       "local": {
         "scrollTop": 0,
-        "select": "ui-button"
+        "select": "button"
       }
     }
   }
