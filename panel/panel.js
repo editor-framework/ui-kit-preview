@@ -38,6 +38,11 @@ Editor.Panel.extend({
       flex-direction: row;
       align-items: center;
     }
+
+    span.label {
+      font-size: 12px;
+      margin-right: 0.25em;
+    }
   `,
 
   template: `
@@ -46,6 +51,8 @@ Editor.Panel.extend({
         <option value="button">ui-button</option>
         <option value="checkbox">ui-checkbox</option>
         <option value="input">ui-input</option>
+        <option value="select">ui-select</option>
+        <option value="slider">ui-slider</option>
       </select>
     </div>
     <div id="view"></div>

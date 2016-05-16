@@ -24,9 +24,9 @@
           let text = viewEL.querySelector(`${g} span.text`);
           text.innerHTML = input.value;
 
-          input.addEventListener('input', () => {
+          input.addEventListener('input', event => {
             let text = viewEL.querySelector(`${g} span.text`);
-            text.innerHTML = input.value;
+            text.innerHTML = event.detail.value;
 
             _updateEventText(viewEL, 'input');
           });
