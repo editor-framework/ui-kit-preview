@@ -11,13 +11,13 @@ Editor.Panel.extend({
       display: flex;
       flex-direction: row;
 
-      margin: 10px;
+      padding: 10px;
     }
 
     #view {
       flex: 1;
 
-      margin: 10px;
+      padding: 10px;
       overflow-y: auto;
       overflow-x: hidden;
     }
