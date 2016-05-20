@@ -13,28 +13,29 @@
   }
 
   return function init ( viewEL ) {
-    Editor.import('packages://ui-kit-preview/panel/slider-preview.tmpl').then(
+    Editor.import('packages://ui-kit-preview/panel/num-input-preview.tmpl').then(
       content => {
         viewEL.innerHTML = content;
 
         // g-01
         ['.g-01', '.g-02'].forEach(g => {
-          let slider = viewEL.querySelector(`${g} ui-slider`);
-          let text = viewEL.querySelector(`${g} span.text`);
-          text.innerHTML = slider.value;
+          let input = viewEL.querySelector(`${g} ui-num-input`);
 
-          slider.addEventListener('change', event => {
+          let text = viewEL.querySelector(`${g} span.text`);
+          text.innerHTML = input.value;
+
+          input.addEventListener('input', event => {
             let text = viewEL.querySelector(`${g} span.text`);
             text.innerHTML = event.detail.value;
 
-            _updateEventText(viewEL, 'change');
+            _updateEventText(viewEL, 'input');
           });
 
-          slider.addEventListener('confirm', () => {
+          input.addEventListener('confirm', () => {
             _updateEventText(viewEL, 'confirm');
           });
 
-          slider.addEventListener('cancel', () => {
+          input.addEventListener('cancel', () => {
             _updateEventText(viewEL, 'cancel');
           });
         });

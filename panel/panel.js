@@ -50,7 +50,11 @@ Editor.Panel.extend({
       <select id="select">
         <option value="button">ui-button</option>
         <option value="checkbox">ui-checkbox</option>
+        <option value="color">ui-color</option>
+        <option value="color-picker">ui-color-picker</option>
         <option value="input">ui-input</option>
+        <option value="num-input">ui-num-input</option>
+        <option value="prop">ui-prop</option>
         <option value="select">ui-select</option>
         <option value="slider">ui-slider</option>
       </select>

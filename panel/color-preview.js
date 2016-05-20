@@ -13,28 +13,22 @@
   }
 
   return function init ( viewEL ) {
-    Editor.import('packages://ui-kit-preview/panel/slider-preview.tmpl').then(
+    Editor.import('packages://ui-kit-preview/panel/color-preview.tmpl').then(
       content => {
         viewEL.innerHTML = content;
 
         // g-01
         ['.g-01', '.g-02'].forEach(g => {
-          let slider = viewEL.querySelector(`${g} ui-slider`);
+          let color = viewEL.querySelector(`${g} ui-color`);
+
           let text = viewEL.querySelector(`${g} span.text`);
-          text.innerHTML = slider.value;
+          text.innerHTML = color.value;
 
-          slider.addEventListener('change', event => {
-            let text = viewEL.querySelector(`${g} span.text`);
-            text.innerHTML = event.detail.value;
-
-            _updateEventText(viewEL, 'change');
-          });
-
-          slider.addEventListener('confirm', () => {
+          color.addEventListener('confirm', () => {
             _updateEventText(viewEL, 'confirm');
           });
 
-          slider.addEventListener('cancel', () => {
+          color.addEventListener('cancel', () => {
             _updateEventText(viewEL, 'cancel');
           });
         });
