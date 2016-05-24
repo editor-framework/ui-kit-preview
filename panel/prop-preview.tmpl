@@ -1,96 +1,123 @@
 <div class="section">
   <h3>Standard</h3>
   <div class="g-01">
-    <ui-prop class="flex-1" name="Name">
-      <ui-input class="flex-1" value="Hello World"></ui-input>
+    <ui-prop name="Basic" class="flex-1">
+      <ui-input class="flex-1" value="Foobar" placeholder="User Name"></ui-input>
     </ui-prop>
-    <ui-prop class="flex-1" name="Custom Size">
-      <ui-checkbox class="flex-1"></ui-checkbox>
+
+    <ui-prop name="Multiply Controls" class="flex-1">
+      <ui-checkbox>Enable</ui-checkbox>
+      <span style="width: 10px;"></span>
+      <ui-color value="#09f" class="flex-1"></ui-color>
     </ui-prop>
-    <ui-prop class="flex-1" name="Size">
-      <ui-num-input class="flex-1" value="20"></ui-num-input>
+
+    <ui-prop name="Multiply Props" class="flex-1">
+      <ui-prop name="Width" class="fixed-label flex-1">
+        <ui-num-input value="300" class="flex-1"></ui-num-input>
+      </ui-prop>
+      <ui-prop name="Height" class="fixed-label flex-1">
+        <ui-num-input value="400" class="flex-1"></ui-num-input>
+      </ui-prop>
     </ui-prop>
-    <ui-prop class="flex-1" name="Speed">
-      <ui-slider class="flex-1" value="2" min="0.1" max="5"></ui-slider>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Type">
-      <ui-select class="flex-1">
-        <option value="1">Wrap</option>
-        <option value="2">Repeat</option>
-        <option value="3">Auto</option>
-      </ui-select>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Color">
-      <ui-color class="flex-1" value="#09f"></ui-color>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Clear">
-      <ui-checkbox>Color</ui-checkbox>
-      <span style="width: 20px;"></span>
-      <ui-checkbox>Depth</ui-checkbox>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Build">
+
+    <ui-prop name="End Justified" class="flex-1">
       <div class="flex-1 layout horizontal end-justified">
         <ui-button class="green">Start</ui-button>
       </div>
     </ui-prop>
 
-    <h3>Foldable</h3>
-
-    <ui-prop class="flex-1" name="Object Info" foldable>
-      <ui-input class="flex-1" placeholder="Name"></ui-input>
-      <div class="custom-block">
-        <ui-prop class="flex-1" name="Position" indent="1" foldable>
-          <div class="custom-block">
-            <ui-prop class="flex-1" name="X" indent="2">
-              <ui-num-input class="flex-1" value="1"></ui-num-input>
-            </ui-prop>
-            <ui-prop class="flex-1" name="Y" indent="2">
-              <ui-num-input class="flex-1" value="2"></ui-num-input>
-            </ui-prop>
-            <ui-prop class="flex-1" name="Z" indent="2">
-              <ui-num-input class="flex-1" value="3"></ui-num-input>
-            </ui-prop>
-          </div>
-        </ui-prop>
-        <ui-prop class="flex-1" name="Rotation" indent="1">
-          <ui-num-input class="flex-1" value="20"></ui-num-input>
-        </ui-prop>
-        <ui-prop class="flex-1" name="Scale" indent="1">
-          <ui-prop class="fixed flex-1 red" name="X">
-            <ui-num-input class="flex-1" value="1"></ui-num-input>
-          </ui-prop>
-          <ui-prop class="fixed flex-1 green" name="Y">
-            <ui-num-input class="flex-1" value="2"></ui-num-input>
-          </ui-prop>
-          <ui-prop class="fixed flex-1 blue" name="Z">
-            <ui-num-input class="flex-1" value="3"></ui-num-input>
-          </ui-prop>
-        </ui-prop>
-      </div>
+    <ui-prop name="Slidable" slidable>
+      <ui-num-input value="1.0" class="flex-1"></ui-num-input>
+      <ui-slider value="0.5" class="flex-1"></ui-slider>
     </ui-prop>
 
-    <h3>Indent</h3>
+    <ui-prop name="Color Label" class="blue">
+      <ui-num-input class="flex-1" value="20"></ui-num-input>
+    </ui-prop>
 
-    <ui-prop class="flex-1" name="Animation Object">
+    <ui-prop name="Readonly" readonly>
+      <ui-input class="flex-1" value="Some Text" readonly></ui-input>
     </ui-prop>
-    <ui-prop class="flex-1" name="Name" indent="1">
-      <ui-input class="flex-1" value="Foobar"></ui-input>
+
+    <ui-prop name="Disabled" disabled>
+      <ui-input class="flex-1" disabled></ui-input>
+      <ui-button class="tiny" disabled>Apply</ui-button>
     </ui-prop>
-    <ui-prop class="flex-1" name="Length" indent="1">
-      <ui-num-input class="flex-1" value="20.3"></ui-num-input>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Auto" indent="1">
-      <ui-checkbox class="flex-1" checked></ui-checkbox>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Advanced" indent="1">
-    </ui-prop>
-    <ui-prop class="flex-1" name="Move Speed" indent="2">
-      <ui-slider class="flex-1"></ui-slider>
-    </ui-prop>
-    <ui-prop class="flex-1" name="Rotate Speed" indent="2">
-      <ui-slider class="flex-1"></ui-slider>
-    </ui-prop>
+
+    <span class="event">event: none</span>
   </div>
+</div>
 
-  <span class="event">event: none</span>
+<div class="section">
+  <h3>Foldable</h3>
+
+  <ui-prop class="flex-1" name="Foldable Prop" foldable>
+    <ui-input class="flex-1" placeholder="Name"></ui-input>
+    <div class="child">
+      <ui-prop class="flex-1" name="Basic" indent="1">
+        <ui-num-input class="flex-1" value="20"></ui-num-input>
+      </ui-prop>
+
+      <ui-prop class="flex-1" name="Multiply" indent="1">
+        <ui-prop class="fixed-label flex-1 red" name="X">
+          <ui-num-input class="flex-1" value="1"></ui-num-input>
+        </ui-prop>
+        <ui-prop class="fixed-label flex-1 green" name="Y">
+          <ui-num-input class="flex-1" value="2"></ui-num-input>
+        </ui-prop>
+        <ui-prop class="fixed-label flex-1 blue" name="Z">
+          <ui-num-input class="flex-1" value="3"></ui-num-input>
+        </ui-prop>
+      </ui-prop>
+
+      <ui-prop class="flex-1" name="Nested" indent="1" foldable>
+        <div class="child">
+          <ui-prop class="flex-1" name="Prop 01" indent="2">
+            <ui-checkbox class="flex-1"></ui-checkbox>
+          </ui-prop>
+          <ui-prop class="flex-1" name="Prop 02" indent="2">
+            <ui-checkbox class="flex-1"></ui-checkbox>
+          </ui-prop>
+        </div>
+      </ui-prop>
+
+      <ui-prop class="flex-1" name="Disabled" indent="1" foldable disabled>
+        <ui-num-input class="flex-1" value="20" disabled></ui-num-input>
+        <div class="child">
+          <ui-prop class="flex-1" name="Prop 01" indent="2" disabled>
+            <ui-slider class="flex-1" disabled></ui-slider>
+          </ui-prop>
+        </div>
+      </ui-prop>
+
+      <ui-prop class="flex-1" name="Readonly" indent="1" foldable readonly>
+        <ui-num-input class="flex-1" value="20" readonly></ui-num-input>
+        <div class="child">
+          <ui-prop class="flex-1" name="Prop 01" indent="2" readonly>
+            <ui-checkbox class="flex-1" readonly></ui-checkbox>
+          </ui-prop>
+        </div>
+      </ui-prop>
+    </div>
+  </ui-prop>
+</div>
+
+<div class="section">
+  <h3>Indent</h3>
+
+  <ui-prop class="flex-1" name="Indent 0"></ui-prop>
+  <ui-prop class="flex-1" name="Indent 1" indent="1">
+    <ui-num-input class="flex-1" value="20.3"></ui-num-input>
+  </ui-prop>
+  <ui-prop class="flex-1" name="Indent 1" indent="1">
+    <ui-checkbox class="flex-1" checked></ui-checkbox>
+  </ui-prop>
+  <ui-prop class="flex-1" name="Indent 1" indent="1">
+  </ui-prop>
+  <ui-prop class="flex-1" name="Indent 2" indent="2">
+    <ui-slider class="flex-1" value="0.5"></ui-slider>
+  </ui-prop>
+  <ui-prop class="flex-1" name="Indent 2" indent="2">
+    <ui-slider class="flex-1" value="0.5"></ui-slider>
+  </ui-prop>
 </div>

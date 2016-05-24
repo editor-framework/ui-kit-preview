@@ -59,7 +59,7 @@ Editor.Panel.extend({
         <option value="slider">ui-slider</option>
       </select>
     </div>
-    <div id="view"></div>
+    <div id="view" class="scroll"></div>
   `,
 
   listeners: {
