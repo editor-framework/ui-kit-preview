@@ -32,6 +32,12 @@
             _updateEventText(viewEL, 'cancel');
           });
         });
+
+        let el = viewEL.querySelector(`.g-03 [disabled]`);
+        let btn = viewEL.querySelector(`.g-03 #focus`);
+        btn.addEventListener('click', () => {
+          Editor.UI.focus(el);
+        });
       }
     );
   };

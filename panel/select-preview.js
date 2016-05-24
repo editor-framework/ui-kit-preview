@@ -31,6 +31,12 @@
             }, 200);
           });
         });
+
+        let el = viewEL.querySelector(`.g-02 [disabled]`);
+        let btn = viewEL.querySelector(`.g-02 #focus`);
+        btn.addEventListener('click', () => {
+          Editor.UI.focus(el);
+        });
       }
     );
   };

@@ -39,8 +39,7 @@ Editor.Panel.extend({
       align-items: center;
     }
 
-    span.label {
-      font-size: 12px;
+    span {
       margin-right: 0.25em;
     }
   `,
