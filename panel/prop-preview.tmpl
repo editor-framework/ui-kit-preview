@@ -53,6 +53,15 @@
       </ui-prop>
     </ui-prop>
 
+    <ui-prop name="Partial Readonly">
+      <ui-prop name="Width" class="fixed-label flex-1" readonly>
+        <ui-num-input value="300" class="flex-1" readonly></ui-num-input>
+      </ui-prop>
+      <ui-prop name="Height" class="fixed-label flex-1">
+        <ui-num-input value="400" class="flex-1"></ui-num-input>
+      </ui-prop>
+    </ui-prop>
+
     <span class="event">event: none</span>
   </div>
 </div>
@@ -85,7 +94,10 @@
             <ui-checkbox class="flex-1"></ui-checkbox>
           </ui-prop>
           <ui-prop class="flex-1" name="Prop 02" indent="2">
-            <ui-checkbox class="flex-1"></ui-checkbox>
+            <ui-select class="flex-1">
+              <option>Wrap</option>
+              <option>Repeat</option>
+            </ui-select>
           </ui-prop>
         </div>
       </ui-prop>

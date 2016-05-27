@@ -7,9 +7,15 @@ Editor.Panel.extend({
       flex-direction: column;
     }
 
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
     .toolbar {
       display: flex;
       flex-direction: row;
+      align-items: center;
 
       padding: 10px;
     }
@@ -18,6 +24,8 @@ Editor.Panel.extend({
       flex: 1;
 
       padding: 10px;
+      padding-top: 0px;
+
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -25,6 +33,7 @@ Editor.Panel.extend({
     div.section {
       border-bottom: 1px solid #666;
       padding-bottom: 10px;
+      margin-bottom: 10px;
     }
 
     div.section:last-child {
@@ -46,7 +55,7 @@ Editor.Panel.extend({
 
   template: `
     <div class="toolbar">
-      <select id="select">
+      <ui-select id="select">
         <option value="button">ui-button</option>
         <option value="checkbox">ui-checkbox</option>
         <option value="color">ui-color</option>
@@ -56,7 +65,8 @@ Editor.Panel.extend({
         <option value="prop">ui-prop</option>
         <option value="select">ui-select</option>
         <option value="slider">ui-slider</option>
-      </select>
+      </ui-select>
+      <span>Ctrl/Cmd + F: show current focus</span>
     </div>
     <div id="view" class="scroll"></div>
   `,
@@ -70,7 +80,19 @@ Editor.Panel.extend({
       view: this.shadowRoot.querySelector('#view'),
     };
 
-    this.$.select.addEventListener('change', event => {
+    this.addEventListener('keydown', event => {
+      if (event.metaKey || event.ctrlKey) {
+        if (Editor.KeyCode(event.keyCode) === 'f') {
+          if ( Editor.UI.FocusMgr.focusedElement ) {
+            console.log(Editor.UI.FocusMgr.focusedElement._curFocus);
+          } else {
+            console.log(null);
+          }
+        }
+      }
+    });
+
+    this.$.select.addEventListener('confirm', event => {
       let value = event.target.value;
 
       this.profiles.local.scrollTop = 0;
