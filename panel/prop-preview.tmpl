@@ -44,6 +44,10 @@
       <ui-button class="tiny" disabled>Apply</ui-button>
     </ui-prop>
 
+    <ui-prop class="flex-1" name="Removable" removable>
+      <ui-num-input class="flex-1" value="20"></ui-num-input>
+    </ui-prop>
+
     <ui-prop name="Partial Disabled">
       <ui-prop name="Width" class="fixed-label flex-1" disabled>
         <ui-num-input value="300" class="flex-1" disabled></ui-num-input>
@@ -118,6 +122,27 @@
             <ui-checkbox class="flex-1" readonly></ui-checkbox>
           </ui-prop>
         </div>
+      </ui-prop>
+    </div>
+  </ui-prop>
+</div>
+
+<div class="section">
+  <h3>Movable</h3>
+
+  <ui-prop class="flex-1" name="Movable Array" foldable>
+    <ui-num-input class="flex-1" value="3" precision="0" step="1"></ui-num-input>
+    <div class="child">
+      <ui-prop class="flex-1" name="[0]" indent="1" movable>
+        <ui-checkbox class="flex-1"></ui-checkbox>
+      </ui-prop>
+
+      <ui-prop class="flex-1" name="[1]" indent="1" movable>
+        <ui-checkbox class="flex-1"></ui-checkbox>
+      </ui-prop>
+
+      <ui-prop class="flex-1" name="[2]" indent="1" movable>
+        <ui-checkbox class="flex-1"></ui-checkbox>
       </ui-prop>
     </div>
   </ui-prop>
