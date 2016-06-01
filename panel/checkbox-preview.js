@@ -20,6 +20,10 @@
           target.addEventListener('confirm', () => {
             panel._updateEventText(eventEL, 'confirm');
           });
+
+          target.addEventListener('cancel', () => {
+            panel._updateEventText(eventEL, 'cancel');
+          });
         });
 
         let target = viewEL.querySelector(`.g-02 [disabled]`);

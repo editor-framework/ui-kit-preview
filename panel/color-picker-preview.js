@@ -21,12 +21,18 @@
             panel._updateEventText(eventEL, 'change');
           });
 
-          target.addEventListener('confirm', () => {
+          target.addEventListener('confirm', event => {
+            text.innerHTML = event.detail.value;
             panel._updateEventText(eventEL, 'confirm');
           });
 
-          target.addEventListener('cancel', () => {
+          target.addEventListener('cancel', event => {
+            text.innerHTML = event.detail.value;
             panel._updateEventText(eventEL, 'cancel');
+          });
+
+          target.addEventListener('hide', () => {
+            panel._updateEventText(eventEL, 'hide');
           });
         });
       }

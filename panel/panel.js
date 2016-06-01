@@ -126,11 +126,19 @@ Editor.Panel.extend({
   _updateEventText (eventEL, name) {
     clearTimeout(this._timeoutID);
 
-    console.log(name);
-    eventEL.innerHTML = `event: ${name}`;
+    if ( !this._events ) {
+      this._events = [];
+    }
+    if ( this._events.length >= 5 ) {
+      this._events.pop();
+    }
+    this._events.push(name);
+
+    eventEL.innerHTML = `event: ${this._events.join(',')}`;
 
     this._timeoutID = setTimeout(() => {
-      eventEL.innerHTML = 'event: none';
+      eventEL.innerHTML = 'event: ---';
+      this._events = [];
     }, 200);
   },
 });
