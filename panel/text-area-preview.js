@@ -4,19 +4,23 @@
   return function init ( panel ) {
     let viewEL = panel.$.view;
 
-    Editor.import('packages://ui-kit-preview/panel/color-preview.tmpl').then(
+    Editor.import('packages://ui-kit-preview/panel/text-area-preview.tmpl').then(
       content => {
         viewEL.innerHTML = content;
         let eventEL = viewEL.querySelector('#event');
 
         // g-01
         ['.g-01', '.g-02'].forEach(g => {
-          let target = viewEL.querySelector(`${g} ui-color`);
+          let target = viewEL.querySelector(`${g} ui-text-area`);
 
           let text = viewEL.querySelector(`${g} span.text`);
+          text.style.whiteSpace = 'pre';
           text.innerHTML = target.value;
 
-          target.addEventListener('change', () => {
+          target.addEventListener('change', event => {
+            let text = viewEL.querySelector(`${g} span.text`);
+            text.innerHTML = event.detail.value;
+
             panel._updateEventText(eventEL, 'change');
           });
 

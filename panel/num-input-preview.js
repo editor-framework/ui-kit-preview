@@ -1,49 +1,41 @@
 (() => {
   'use strict';
 
-  let timeoutID = null;
+  return function init ( panel ) {
+    let viewEL = panel.$.view;
 
-  function _updateEventText ( viewEL, name ) {
-    let eventEL = viewEL.querySelector(`.event`);
-    clearTimeout(timeoutID);
-    eventEL.innerHTML = `event: ${name}`;
-    timeoutID = setTimeout(() => {
-      eventEL.innerHTML = 'event: none';
-    }, 200);
-  }
-
-  return function init ( viewEL ) {
     Editor.import('packages://ui-kit-preview/panel/num-input-preview.tmpl').then(
       content => {
         viewEL.innerHTML = content;
+        let eventEL = viewEL.querySelector('#event');
 
         // g-01
         ['.g-01', '.g-02'].forEach(g => {
-          let input = viewEL.querySelector(`${g} ui-num-input`);
+          let target = viewEL.querySelector(`${g} ui-num-input`);
 
           let text = viewEL.querySelector(`${g} span.text`);
-          text.innerHTML = input.value;
+          text.innerHTML = target.value;
 
-          input.addEventListener('input', event => {
+          target.addEventListener('change', event => {
             let text = viewEL.querySelector(`${g} span.text`);
             text.innerHTML = event.detail.value;
 
-            _updateEventText(viewEL, 'input');
+            panel._updateEventText(eventEL, 'change');
           });
 
-          input.addEventListener('confirm', () => {
-            _updateEventText(viewEL, 'confirm');
+          target.addEventListener('confirm', () => {
+            panel._updateEventText(eventEL, 'confirm');
           });
 
-          input.addEventListener('cancel', () => {
-            _updateEventText(viewEL, 'cancel');
+          target.addEventListener('cancel', () => {
+            panel._updateEventText(eventEL, 'cancel');
           });
         });
 
-        let el = viewEL.querySelector(`.g-03 [disabled]`);
+        let target = viewEL.querySelector(`.g-03 [disabled]`);
         let btn = viewEL.querySelector(`.g-03 #focus`);
         btn.addEventListener('click', () => {
-          Editor.UI.focus(el);
+          Editor.UI.focus(target);
         });
       }
     );

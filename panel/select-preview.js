@@ -1,27 +1,19 @@
 (() => {
   'use strict';
 
-  let timeoutID = null;
+  return function init ( panel ) {
+    let viewEL = panel.$.view;
 
-  function _updateEventText ( viewEL, name ) {
-    let eventEL = viewEL.querySelector(`.event`);
-    clearTimeout(timeoutID);
-    eventEL.innerHTML = `event: ${name}`;
-    timeoutID = setTimeout(() => {
-      eventEL.innerHTML = 'event: none';
-    }, 200);
-  }
-
-  return function init ( viewEL ) {
     Editor.import('packages://ui-kit-preview/panel/select-preview.tmpl').then(
       content => {
         viewEL.innerHTML = content;
+        let eventEL = viewEL.querySelector('#event');
 
         ['.g-01'].forEach(g => {
-          let select = viewEL.querySelector(`${g} ui-select`);
+          let target = viewEL.querySelector(`${g} ui-select`);
 
-          select.addEventListener('confirm', event => {
-            _updateEventText(viewEL, 'confirm');
+          target.addEventListener('confirm', event => {
+            panel._updateEventText(eventEL, 'confirm');
 
             let text = viewEL.querySelector(`${g} span.text`);
             text.style.display = '';
@@ -32,10 +24,10 @@
           });
         });
 
-        let el = viewEL.querySelector(`.g-02 [disabled]`);
+        let target = viewEL.querySelector(`.g-02 [disabled]`);
         let btn = viewEL.querySelector(`.g-02 #focus`);
         btn.addEventListener('click', () => {
-          Editor.UI.focus(el);
+          Editor.UI.focus(target);
         });
       }
     );

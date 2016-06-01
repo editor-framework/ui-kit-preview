@@ -65,6 +65,7 @@ Editor.Panel.extend({
         <option value="prop">ui-prop</option>
         <option value="select">ui-select</option>
         <option value="slider">ui-slider</option>
+        <option value="text-area">ui-text-area</option>
       </ui-select>
       <span>Ctrl/Cmd + F: show current focus</span>
     </div>
@@ -115,10 +116,21 @@ Editor.Panel.extend({
     Editor
       .import(`packages://ui-kit-preview/panel/${name}-preview.js`)
       .then(initFn => {
-        initFn(this.$.view);
+        initFn(this);
         setTimeout(() => {
           this.$.view.scrollTop = this.profiles.local.scrollTop;
         }, 10);
       });
+  },
+
+  _updateEventText (eventEL, name) {
+    clearTimeout(this._timeoutID);
+
+    console.log(name);
+    eventEL.innerHTML = `event: ${name}`;
+
+    this._timeoutID = setTimeout(() => {
+      eventEL.innerHTML = 'event: none';
+    }, 200);
   },
 });

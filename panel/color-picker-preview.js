@@ -1,35 +1,32 @@
 (() => {
   'use strict';
 
-  let timeoutID = null;
+  return function init ( panel ) {
+    let viewEL = panel.$.view;
 
-  function _updateEventText ( viewEL, name ) {
-    let eventEL = viewEL.querySelector(`.event`);
-    clearTimeout(timeoutID);
-    eventEL.innerHTML = `event: ${name}`;
-    timeoutID = setTimeout(() => {
-      eventEL.innerHTML = 'event: none';
-    }, 200);
-  }
-
-  return function init ( viewEL ) {
     Editor.import('packages://ui-kit-preview/panel/color-picker-preview.tmpl').then(
       content => {
         viewEL.innerHTML = content;
+        let eventEL = viewEL.querySelector('#event');
 
         // g-01
         ['.g-01'].forEach(g => {
-          let picker = viewEL.querySelector(`${g} ui-color-picker`);
+          let target = viewEL.querySelector(`${g} ui-color-picker`);
 
           let text = viewEL.querySelector(`div.text`);
-          text.innerHTML = picker.value;
+          text.innerHTML = target.value;
 
-          picker.addEventListener('confirm', () => {
-            _updateEventText(viewEL, 'confirm');
+          target.addEventListener('change', event => {
+            text.innerHTML = event.detail.value;
+            panel._updateEventText(eventEL, 'change');
           });
 
-          picker.addEventListener('cancel', () => {
-            _updateEventText(viewEL, 'cancel');
+          target.addEventListener('confirm', () => {
+            panel._updateEventText(eventEL, 'confirm');
+          });
+
+          target.addEventListener('cancel', () => {
+            panel._updateEventText(eventEL, 'cancel');
           });
         });
       }
