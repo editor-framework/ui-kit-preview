@@ -5,7 +5,7 @@
   "author": "jwu",
   "main": "main.js",
   "main-menu": {
-    "i18n:MAIN_MENU.developer.title/UI Preview/ui-kit-preview": {
+    "i18n:MAIN_MENU.developer.title/ui-kit Preview": {
       "message": "ui-kit-preview:open"
     }
   },
