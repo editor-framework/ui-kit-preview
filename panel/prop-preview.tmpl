@@ -39,9 +39,9 @@
       <ui-input class="flex-1" value="Some Text" readonly></ui-input>
     </ui-prop>
 
-    <ui-prop name="Disabled" disabled>
-      <ui-input class="flex-1" disabled></ui-input>
-      <ui-button class="tiny" disabled>Apply</ui-button>
+    <ui-prop name="Disabled" self-disabled>
+      <ui-input class="flex-1"></ui-input>
+      <ui-button class="tiny">Apply</ui-button>
     </ui-prop>
 
     <ui-prop class="flex-1" name="Removable" removable>
@@ -49,8 +49,8 @@
     </ui-prop>
 
     <ui-prop name="Partial Disabled">
-      <ui-prop name="Width" class="fixed-label flex-1" disabled>
-        <ui-num-input value="300" class="flex-1" disabled></ui-num-input>
+      <ui-prop name="Width" class="fixed-label flex-1" self-disabled>
+        <ui-num-input value="300" class="flex-1"></ui-num-input>
       </ui-prop>
       <ui-prop name="Height" class="fixed-label flex-1">
         <ui-num-input value="400" class="flex-1"></ui-num-input>
@@ -110,11 +110,11 @@
         </div>
       </ui-prop>
 
-      <ui-prop class="flex-1" name="Disabled" indent="1" foldable disabled>
-        <ui-num-input class="flex-1" value="20" disabled></ui-num-input>
+      <ui-prop class="flex-1" name="Disabled" indent="1" foldable self-disabled>
+        <ui-num-input class="flex-1" value="20"></ui-num-input>
         <div class="child">
-          <ui-prop class="flex-1" name="Prop 01" indent="2" disabled>
-            <ui-slider class="flex-1" disabled></ui-slider>
+          <ui-prop class="flex-1" name="Prop 01" indent="2">
+            <ui-slider class="flex-1"></ui-slider>
           </ui-prop>
         </div>
       </ui-prop>

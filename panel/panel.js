@@ -84,8 +84,8 @@ Editor.Panel.extend({
     this.addEventListener('keydown', event => {
       if (event.metaKey || event.ctrlKey) {
         if (Editor.KeyCode(event.keyCode) === 'f') {
-          if ( Editor.UI.FocusMgr.focusedElement ) {
-            console.log(Editor.UI.FocusMgr.focusedElement._curFocus);
+          if ( Editor.UI.focusedElement ) {
+            console.log(Editor.UI.focusedElement._curFocus);
           } else {
             console.log(null);
           }

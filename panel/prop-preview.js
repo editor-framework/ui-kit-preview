@@ -17,7 +17,7 @@
         // let val1 = inputEL.value;
         // let val2 = slideEL.value;
 
-        target.addEventListener('slide', event => {
+        target.addEventListener('slide-change', event => {
           inputEL.value = inputEL.value + event.detail.dx;
           slideEL.value = slideEL.value - event.detail.dy  * 0.001;
         });
