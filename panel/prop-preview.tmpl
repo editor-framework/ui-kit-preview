@@ -36,10 +36,10 @@
     </ui-prop>
 
     <ui-prop name="Readonly" readonly>
-      <ui-input class="flex-1" value="Some Text" readonly></ui-input>
+      <ui-input class="flex-1" value="Some Text"></ui-input>
     </ui-prop>
 
-    <ui-prop name="Disabled" self-disabled>
+    <ui-prop name="Disabled" disabled>
       <ui-input class="flex-1"></ui-input>
       <ui-button class="tiny">Apply</ui-button>
     </ui-prop>
@@ -49,7 +49,7 @@
     </ui-prop>
 
     <ui-prop name="Partial Disabled">
-      <ui-prop name="Width" class="fixed-label flex-1" self-disabled>
+      <ui-prop name="Width" class="fixed-label flex-1" disabled>
         <ui-num-input value="300" class="flex-1"></ui-num-input>
       </ui-prop>
       <ui-prop name="Height" class="fixed-label flex-1">
@@ -59,7 +59,7 @@
 
     <ui-prop name="Partial Readonly">
       <ui-prop name="Width" class="fixed-label flex-1" readonly>
-        <ui-num-input value="300" class="flex-1" readonly></ui-num-input>
+        <ui-num-input value="300" class="flex-1"></ui-num-input>
       </ui-prop>
       <ui-prop name="Height" class="fixed-label flex-1">
         <ui-num-input value="400" class="flex-1"></ui-num-input>
@@ -110,7 +110,7 @@
         </div>
       </ui-prop>
 
-      <ui-prop class="flex-1" name="Disabled" indent="1" foldable self-disabled>
+      <ui-prop class="flex-1" name="Disabled" indent="1" foldable disabled>
         <ui-num-input class="flex-1" value="20"></ui-num-input>
         <div class="child">
           <ui-prop class="flex-1" name="Prop 01" indent="2">
@@ -120,10 +120,10 @@
       </ui-prop>
 
       <ui-prop class="flex-1" name="Readonly" indent="1" foldable readonly>
-        <ui-num-input class="flex-1" value="20" readonly></ui-num-input>
+        <ui-num-input class="flex-1" value="20"></ui-num-input>
         <div class="child">
-          <ui-prop class="flex-1" name="Prop 01" indent="2" readonly>
-            <ui-checkbox class="flex-1" readonly></ui-checkbox>
+          <ui-prop class="flex-1" name="Prop 01" indent="2">
+            <ui-checkbox class="flex-1"></ui-checkbox>
           </ui-prop>
         </div>
       </ui-prop>
