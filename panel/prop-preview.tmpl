@@ -171,3 +171,23 @@
     <ui-slider class="flex-1" value="0.5"></ui-slider>
   </ui-prop>
 </div>
+
+<div class="section">
+  <h3>Auto Type</h3>
+
+  <ui-prop name="Boolean" type="boolean" value="true"></ui-prop>
+  <ui-prop name="Number" type="number" value="20"></ui-prop>
+  <ui-prop name="Number (ranged)" type="number" value="0.5" min="0", max="1"></ui-prop>
+  <ui-prop name="Text" type="string" value="Hello World"></ui-prop>
+  <ui-prop name="Text (multiline)" type="string" value="Hello World This is Foobar!" multiline></ui-prop>
+  <ui-prop name="Color" type="color" value="#09f"></ui-prop>
+  <ui-prop name="Vec2" type="vec2" value="[10,20]"></ui-prop>
+  <ui-prop name="Vec3" type="vec3" value="[10,20,30]"></ui-prop>
+  <ui-prop name="Enum" type="enum" value="2">
+    <option value="0">Enum 001</option>
+    <option value="1">Enum 002</option>
+    <option value="2">Enum 003</option>
+    <option value="3">Enum 004</option>
+  </ui-prop>
+  <ui-prop name="Object" type="object" value='{"Name": "Foobar", "ID": 1000, "Enable": true}'></ui-prop>
+</div>
