@@ -41,15 +41,27 @@ Editor.Panel.extend({
     }
 
     div.group {
+      min-width: 420px;
       margin-bottom: 5px;
 
       display: flex;
       flex-direction: row;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     span {
       margin-right: 0.25em;
+    }
+
+    .item {
+      min-width: 100px;
+      min-height: 100px;
+
+      position: relative;
+
+      margin-bottom: 10px;
+      margin-right: 10px;
     }
   `,
 
@@ -61,8 +73,10 @@ Editor.Panel.extend({
         <option value="color">ui-color</option>
         <option value="color-picker">ui-color-picker</option>
         <option value="input">ui-input</option>
+        <option value="loader">ui-loader</option>
         <option value="num-input">ui-num-input</option>
         <option value="prop">ui-prop</option>
+        <option value="section">ui-section</option>
         <option value="select">ui-select</option>
         <option value="slider">ui-slider</option>
         <option value="text-area">ui-text-area</option>
