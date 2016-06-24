@@ -74,6 +74,7 @@ Editor.Panel.extend({
         <option value="color-picker">ui-color-picker</option>
         <option value="input">ui-input</option>
         <option value="loader">ui-loader</option>
+        <option value="markdown">ui-markdown</option>
         <option value="num-input">ui-num-input</option>
         <option value="prop">ui-prop</option>
         <option value="section">ui-section</option>
