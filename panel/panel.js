@@ -68,6 +68,7 @@ Editor.Panel.extend({
   template: `
     <div class="toolbar">
       <ui-select id="select">
+        <option value="icon">icons</option>
         <option value="button">ui-button</option>
         <option value="checkbox">ui-checkbox</option>
         <option value="color">ui-color</option>
