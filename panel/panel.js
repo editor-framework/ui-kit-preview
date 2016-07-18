@@ -63,16 +63,38 @@ Editor.Panel.extend({
       margin-bottom: 10px;
       margin-right: 10px;
     }
+
+    .placeholder {
+      height: 20px;
+
+      margin-bottom: 10px;
+      margin-right: 10px;
+
+      background-color: rgba( 0, 0, 0, 0.3 );
+    }
+
+    .placeholder.label {
+      width: 100px;
+    }
+
+    .placeholder.line {
+    }
+
+    .placeholder.image {
+      width: 100px;
+      height: 100px;
+    }
   `,
 
   template: `
     <div class="toolbar">
       <ui-select id="select">
-        <option value="icon">icons</option>
         <option value="button">ui-button</option>
         <option value="checkbox">ui-checkbox</option>
         <option value="color">ui-color</option>
         <option value="color-picker">ui-color-picker</option>
+        <option value="hint">ui-hint</option>
+        <option value="icon">icons</option>
         <option value="input">ui-input</option>
         <option value="loader">ui-loader</option>
         <option value="markdown">ui-markdown</option>
