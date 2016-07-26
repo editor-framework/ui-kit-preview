@@ -70,6 +70,14 @@
       <ui-text-area class="flex-1" resize-v></ui-text-area>
     </ui-prop>
 
+    <ui-prop
+      class="flex-1"
+      name="Tooltip"
+      tooltip="A container is a fixed width element that wraps your site's content. It remains a constant size and uses margin to center. Containers are the simplest way to center page content inside a grid."
+    >
+        <ui-num-input value="400" class="flex-1"></ui-num-input>
+    </ui-prop>
+
     <span id="event">event: ---</span>
   </div>
 </div>
@@ -177,7 +185,9 @@
 
   <ui-prop name="Boolean" type="boolean" value="true"></ui-prop>
   <ui-prop name="Number" type="number" value="20"></ui-prop>
-  <ui-prop name="Number (ranged)" type="number" value="0.5" min="0", max="1"></ui-prop>
+  <ui-prop name="Number (ranged)" type="number" value="0.5" min="0" max="1"></ui-prop>
+  <ui-prop name="Number (integer)" type="number" input-type="int" value="5"></ui-prop>
+  <ui-prop name="Number (slide)" type="number" value="50" step="10" min="0" max="100" slide></ui-prop>
   <ui-prop name="Text" type="string" value="Hello World"></ui-prop>
   <ui-prop name="Text (multiline)" type="string" value="Hello World This is Foobar!" multiline></ui-prop>
   <ui-prop name="Color" type="color" value="#09f"></ui-prop>

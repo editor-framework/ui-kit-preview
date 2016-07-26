@@ -104,6 +104,7 @@ Editor.Panel.extend({
         <option value="select">ui-select</option>
         <option value="slider">ui-slider</option>
         <option value="text-area">ui-text-area</option>
+        <option value="shadow">ui-shadow</option>
       </ui-select>
       <span>Ctrl/Cmd + F: show current focus</span>
     </div>
