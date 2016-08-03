@@ -89,6 +89,7 @@ Editor.Panel.extend({
   template: `
     <div class="toolbar">
       <ui-select id="select">
+        <option value="box-container">ui-box-container</option>
         <option value="button">ui-button</option>
         <option value="checkbox">ui-checkbox</option>
         <option value="color">ui-color</option>
@@ -99,12 +100,13 @@ Editor.Panel.extend({
         <option value="loader">ui-loader</option>
         <option value="markdown">ui-markdown</option>
         <option value="num-input">ui-num-input</option>
+        <option value="progress">ui-progress</option>
         <option value="prop">ui-prop</option>
         <option value="section">ui-section</option>
         <option value="select">ui-select</option>
+        <option value="shadow">ui-shadow</option>
         <option value="slider">ui-slider</option>
         <option value="text-area">ui-text-area</option>
-        <option value="shadow">ui-shadow</option>
       </ui-select>
       <span>Ctrl/Cmd + F: show current focus</span>
     </div>
