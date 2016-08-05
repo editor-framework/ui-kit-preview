@@ -1,5 +1,10 @@
 <style>
+  h2 {
+    color: #f90;
+  }
+
   .wrapper {
+    position: relative;
     flex: 1;
     background: #333;
     margin-bottom: 5px;
@@ -35,6 +40,8 @@
     margin-bottom: 0px;
   }
 </style>
+
+<h2>Horizontal</h2>
 
 <div class="section">
   <h3>class="layout horizontal"</h3>
@@ -82,19 +89,19 @@
 <div class="section">
   <h3>class="layout horizontal ${align-items}"</h3>
   <div style="height: 80px;" class="wrapper layout horizontal start">
-    <div class="box">start</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+    <div style="height: 30px;" class="box">start</div>
+    <div style="height: 40px;" class="box">2</div>
+    <div style="height: 50px;" class="box">3</div>
   </div>
   <div style="height: 80px;" class="wrapper layout horizontal center">
-    <div class="box">center</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+    <div style="height: 30px;" class="box">center</div>
+    <div style="height: 40px;" class="box">2</div>
+    <div style="height: 50px;" class="box">3</div>
   </div>
   <div style="height: 80px;" class="wrapper layout horizontal end">
-    <div class="box">end</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+    <div style="height: 30px;" class="box">end</div>
+    <div style="height: 40px;" class="box">2</div>
+    <div style="height: 50px;" class="box">3</div>
   </div>
   <div style="height: 80px;" class="wrapper layout horizontal self">
     <div style="width: auto" class="box self-start">self-start</div>
@@ -103,6 +110,8 @@
     <div style="width: auto; height: auto" class="box self-stretch">self-stretch</div>
   </div>
 </div>
+
+<h2>Vertical</h2>
 
 <div class="section">
   <h3>class="layout vertical"</h3>
@@ -150,19 +159,19 @@
 <div class="section">
   <h3>class="layout vertical ${align-items}"</h3>
   <div class="wrapper layout vertical start">
-    <div class="box">start</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+    <div style="width: 60px;" class="box">start</div>
+    <div style="width: 70px;" class="box">2</div>
+    <div style="width: 80px;" class="box">3</div>
   </div>
   <div class="wrapper layout vertical center">
-    <div class="box">center</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+    <div style="width: 60px;" class="box">center</div>
+    <div style="width: 70px;" class="box">2</div>
+    <div style="width: 80px;" class="box">3</div>
   </div>
   <div class="wrapper layout vertical end">
-    <div class="box">end</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
+    <div style="width: 60px;" class="box">end</div>
+    <div style="width: 70px;" class="box">2</div>
+    <div style="width: 80px;" class="box">3</div>
   </div>
   <div class="wrapper layout vertical self">
     <div style="width: auto" class="box self-start">self-start</div>
@@ -170,4 +179,26 @@
     <div style="width: auto" class="box self-end">self-end</div>
     <div style="width: auto" class="box self-stretch">self-stretch</div>
   </div>
+</div>
+
+<h2>Misc</h2>
+
+<div class="section">
+  <h3>class="flex-1, flex-2, ... flex-12"</h3>
+  <div class="wrapper layout horizontal">
+    <div class="box flex-1">flex-1</div>
+    <div class="box flex-2">flex-2</div>
+    <div class="box flex-3">flex-3</div>
+  </div>
+  <div class="wrapper layout horizontal">
+    <div style="width: auto" class="box flex-none">flex-none</div>
+    <div class="box flex-1">flex-1</div>
+    <div style="width: auto" class="box flex-none">flex-none</div>
+  </div>
+
+  <h3>class="fit"</h3>
+  <div style="width: auto; height: 100px;" class="wrapper">
+    <div style="width: auto; height: auto;" class="box fit">fit</div>
+  </div>
+
 </div>
