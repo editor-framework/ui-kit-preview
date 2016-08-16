@@ -58,35 +58,37 @@ Editor.Panel.extend({
   template: `
     <div class="toolbar">
       <ui-select id="select">
+        <option value="settings">settings</option>
+
         <optgroup label="Controls">
-          <option value="button">ui-button</option>
-          <option value="checkbox">ui-checkbox</option>
-          <option value="color">ui-color</option>
-          <option value="color-picker">ui-color-picker</option>
-          <option value="input">ui-input</option>
-          <option value="num-input">ui-num-input</option>
-          <option value="select">ui-select</option>
-          <option value="slider">ui-slider</option>
-          <option value="text-area">ui-text-area</option>
+          <option value="button-preview">ui-button</option>
+          <option value="checkbox-preview">ui-checkbox</option>
+          <option value="color-preview">ui-color</option>
+          <option value="color-picker-preview">ui-color-picker</option>
+          <option value="input-preview">ui-input</option>
+          <option value="num-input-preview">ui-num-input</option>
+          <option value="select-preview">ui-select</option>
+          <option value="slider-preview">ui-slider</option>
+          <option value="text-area-preview">ui-text-area</option>
         </optgroup>
 
         <optgroup label="Containers">
-          <option value="box-container">ui-box-container</option>
-          <option value="prop">ui-prop</option>
-          <option value="section">ui-section</option>
-          <option value="shadow">ui-shadow</option>
+          <option value="box-container-preview">ui-box-container</option>
+          <option value="prop-preview">ui-prop</option>
+          <option value="section-preview">ui-section</option>
+          <option value="shadow-preview">ui-shadow</option>
         </optgroup>
 
         <optgroup label="Views">
-          <option value="hint">ui-hint</option>
-          <option value="loader">ui-loader</option>
-          <option value="markdown">ui-markdown</option>
-          <option value="progress">ui-progress</option>
+          <option value="hint-preview">ui-hint</option>
+          <option value="loader-preview">ui-loader</option>
+          <option value="markdown-preview">ui-markdown</option>
+          <option value="progress-preview">ui-progress</option>
         </optgroup>
 
         <optgroup label="Misc">
-          <option value="icon">icons</option>
-          <option value="layout">layout</option>
+          <option value="icon-preview">icons</option>
+          <option value="layout-preview">layout</option>
         </optgroup>
       </ui-select>
       <span>Ctrl/Cmd + F: show current focus</span>
@@ -136,7 +138,7 @@ Editor.Panel.extend({
 
   showPreview (name) {
     Editor
-      .import(`packages://ui-kit-preview/panel/${name}-preview.js`)
+      .import(`packages://ui-kit-preview/panel/${name}.js`)
       .then(initFn => {
         initFn(this);
         setTimeout(() => {
