@@ -84,6 +84,7 @@ Editor.Panel.extend({
           <option value="loader-preview">ui-loader</option>
           <option value="markdown-preview">ui-markdown</option>
           <option value="progress-preview">ui-progress</option>
+          <option value="webview-preview">ui-webview</option>
         </optgroup>
 
         <optgroup label="Misc">
