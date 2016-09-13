@@ -15,6 +15,7 @@ The Custom UI Elements used in Editor Framework
   - Containers
     - `<ui-box-container>`
     - `<ui-prop>`
+    - `<ui-prop-table>`
     - `<ui-section>`
     - `<ui-shadow>`
   - Views

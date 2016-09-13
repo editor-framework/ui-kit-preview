@@ -75,6 +75,7 @@ Editor.Panel.extend({
         <optgroup label="Containers">
           <option value="box-container-preview">ui-box-container</option>
           <option value="prop-preview">ui-prop</option>
+          <option value="prop-table-preview">ui-prop-table</option>
           <option value="section-preview">ui-section</option>
           <option value="shadow-preview">ui-shadow</option>
         </optgroup>
