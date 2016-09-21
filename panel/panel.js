@@ -78,6 +78,7 @@ Editor.Panel.extend({
           <option value="prop-table-preview">ui-prop-table</option>
           <option value="section-preview">ui-section</option>
           <option value="shadow-preview">ui-shadow</option>
+          <option value="drop-area-preview">ui-drop-area</option>
         </optgroup>
 
         <optgroup label="Views">
