@@ -74,11 +74,12 @@ Editor.Panel.extend({
 
         <optgroup label="Containers">
           <option value="box-container-preview">ui-box-container</option>
+          <option value="drop-area-preview">ui-drop-area</option>
           <option value="prop-preview">ui-prop</option>
           <option value="prop-table-preview">ui-prop-table</option>
           <option value="section-preview">ui-section</option>
           <option value="shadow-preview">ui-shadow</option>
-          <option value="drop-area-preview">ui-drop-area</option>
+          <option value="splitter-preview">ui-splitter</option>
         </optgroup>
 
         <optgroup label="Views">
@@ -123,19 +124,19 @@ Editor.Panel.extend({
     this.$.select.addEventListener('confirm', event => {
       let value = event.target.value;
 
-      this.profiles.local.scrollTop = 0;
-      this.profiles.local.select = value;
+      this.profiles.local.data.scrollTop = 0;
+      this.profiles.local.data.select = value;
       this.profiles.local.save();
 
       this.showPreview(value);
     });
 
-    this.$.select.value = this.profiles.local.select;
-    this.showPreview(this.profiles.local.select);
+    this.$.select.value = this.profiles.local.data.select;
+    this.showPreview(this.profiles.local.data.select);
   },
 
   close () {
-    this.profiles.local.scrollTop = this.$.view.scrollTop;
+    this.profiles.local.data.scrollTop = this.$.view.scrollTop;
     this.profiles.local.save();
   },
 
@@ -145,7 +146,7 @@ Editor.Panel.extend({
       .then(initFn => {
         initFn(this);
         setTimeout(() => {
-          this.$.view.scrollTop = this.profiles.local.scrollTop;
+          this.$.view.scrollTop = this.profiles.local.data.scrollTop;
         }, 10);
       });
   },
