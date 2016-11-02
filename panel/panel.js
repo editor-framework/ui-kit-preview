@@ -38,6 +38,8 @@ Editor.Panel.extend({
 
     div.section:last-child {
       border-bottom: 0px;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
     }
 
     div.group {
